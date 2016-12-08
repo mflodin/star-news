@@ -21,7 +21,7 @@
 
 .time-ago {
   font-size: 8vw;
-  color: teal;
+  color: rgb(75, 213, 238);
   width: 90vw;
   margin: auto;
   position: relative;
@@ -30,6 +30,10 @@
 
 .svg-wrapper {
   display: none;
+}
+
+.cls-1.cls-1 {
+  fill: rgb(229, 177, 58);
 }
 
 

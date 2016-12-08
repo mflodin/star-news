@@ -57,9 +57,5 @@
   svgWrapper.appendChild(svg);
   wrapper.appendChild(svgWrapper);
 
-  $$('.cls-1').forEach(function(el) {
-    el.style.fill = 'yellow';
-  });
-
   body.appendChild(wrapper);
 })();
