@@ -1,5 +1,5 @@
 .page-wrapper {
-  animation: zoomOut 3s forwards;
+  animation: zoomOutPage 3s forwards;
   transform-origin: top;
 }
 
@@ -14,9 +14,20 @@
 }
 
 .time-ago-wrapper {
+  top: 0;
+  display: none;
+}
+
+.time-ago-wrapper.in {
+  display: block;
   animation: fadeIn 3s forwards;
   animation-delay: 2s;
   opacity: 0;
+}
+
+.time-ago-wrapper.out {
+  animation: fadeOut 3s forwards;
+  opacity: 1;
 }
 
 .time-ago {
@@ -28,8 +39,20 @@
   top: 25vh;
 }
 
-.svg-wrapper {
+.main-logo-wrapper {
+  top: 0;
   display: none;
+
+}
+
+.main-logo-wrapper.in {
+  display: block;
+  animation: zoomOutLogo 10s forwards, fadeOut 5s forwards 5s;
+  height: 100vh;
+}
+
+.main-logo {
+  height: 100vh;
 }
 
 .cls-1.cls-1 {
@@ -47,7 +70,18 @@
   }
 }
 
-@keyframes zoomOut {
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOutPage {
   from {
     transform: perspective(100px) translateZ(0px);
   }
@@ -56,3 +90,15 @@
     transform: perspective(100px) translateZ(-100px);
   }
 }
+
+
+@keyframes zoomOutLogo {
+  from {
+    transform: perspective(100px) translateZ(200px);
+  }
+
+  to {
+    transform: perspective(100px) translateZ(-2000px);
+  }
+}
+
