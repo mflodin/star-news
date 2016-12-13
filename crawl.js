@@ -9,7 +9,7 @@
 
   function create(elStr, opts) {
     var el = document.createElement(elStr);
-    Object.keys(opts).forEach(function (attr) {
+    opts && Object.keys(opts).forEach(function (attr) {
       el[attr] = opts[attr];
     });
     return el;
@@ -34,15 +34,12 @@
   var body = document.body;
   moment.locale('sv');
 
-  var h1 = $('.nyh_article__heading').innerText;
-  var article = $('.nyh_article');
-
-  var wrapper = create('article', { className: 'wrapper'});
+  var wrapper = create('section', { className: 'wrapper'});
 
   var datetime = $('.nyh_article__date-timestamp').getAttribute('datetime');
   var date = moment(parseDate(datetime));
 
-  var timeAgoWrapper = create('article', { className: 'time-ago-wrapper'});
+  var timeAgoWrapper = create('section', { className: 'time-ago-wrapper'});
   var timeAgoText = 'För ' + date.fromNow(true) + ' sedan i en galax ganska nära...';
   var timeAgo = create('div', {className: 'time-ago', innerText: timeAgoText});
   timeAgoWrapper.appendChild(timeAgo);
@@ -54,10 +51,23 @@
   // mainLogo = create('img', {src: 'https://star-news.surge.sh/star_news.svg', className: 'main-logo'});
   mainLogo = create('img', {src: 'http://localhost:8080/star_news.svg', className: 'main-logo'});
   
-  var mainLogoWrapper = create('article', { className: 'main-logo-wrapper'});
+  var mainLogoWrapper = create('section', { className: 'main-logo-wrapper'});
   mainLogoWrapper.appendChild(mainLogo);
   wrapper.appendChild(mainLogoWrapper);
+
+  var article = $('.nyh_article');
+
+  var crawl = create('article', { className: 'crawl', innerHTML: article.innerHTML.replace(/data-reactid="\d+"/g, '') });
+  var crawlWrapper = create('section', { className: 'crawl-wrapper'});
+  crawlWrapper.appendChild(crawl);
+  wrapper.appendChild(crawlWrapper);
+
   body.appendChild(wrapper);
+
+
+  var scroll = create('style');
+  scroll.innerHTML = '@keyframes scroll { from { transform: translateY(1000vh); } to { transform: translateY(' + crawl.clientHeight / -2 + 'px); } }';
+  document.head && document.head.appendChild(scroll);
 
   setTimeout(function () {
     timeAgoWrapper.classList.add('in');
@@ -71,4 +81,8 @@
     timeAgoWrapper.classList.remove('in');
     mainLogoWrapper.classList.add('in');
   }, 13000)
+
+  setTimeout(function () {
+    crawlWrapper.classList.add('in');
+  }, 18000)
 })();
