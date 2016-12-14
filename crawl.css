@@ -31,9 +31,9 @@
 }
 
 .time-ago {
-  font-size: 8vw;
+  font-size: 5vw;
   color: rgb(75, 213, 238);
-  width: 90vw;
+  width: 65vw;
   margin: auto;
   position: relative;
   top: 25vh;

@@ -40,7 +40,7 @@
   var date = moment(parseDate(datetime));
 
   var timeAgoWrapper = create('section', { className: 'time-ago-wrapper'});
-  var timeAgoText = 'För ' + date.fromNow(true) + ' sedan i en galax ganska nära...';
+  var timeAgoText = 'För ' + date.fromNow(true) + ' sedan i en galax ganska nära....';
   var timeAgo = create('div', {className: 'time-ago', innerText: timeAgoText});
   timeAgoWrapper.appendChild(timeAgo);
   wrapper.appendChild(timeAgoWrapper);
