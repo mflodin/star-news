@@ -36,6 +36,13 @@
 
   var wrapper = create('section', { className: 'wrapper'});
 
+  var audio = create('audio', { preload: 'auto' });
+  var ogg = create('source', { type: 'audio/ogg', src: 'http://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg' });
+  var mp3 = create('source', { type: 'audio/mpeg', src: 'http://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3' });
+
+  audio.appendChild(ogg);
+  audio.appendChild(mp3);
+
   var datetime = $('.nyh_article__date-timestamp').getAttribute('datetime');
   var date = moment(parseDate(datetime));
 
@@ -66,19 +73,24 @@
   document.head && document.head.appendChild(scroll);
 
   setTimeout(function () {
+    audio.play(); // starts with 8s silence...
+  }, 3000);
+
+  setTimeout(function () {
     timeAgoWrapper.classList.add('in');
-  }, 0)
+    audio.play();
+  }, 4000);
 
   setTimeout(function () {
     timeAgoWrapper.classList.add('out');
-  }, 10000)
+  }, 9000);
 
   setTimeout(function () {
     timeAgoWrapper.classList.remove('in');
     mainLogoWrapper.classList.add('in');
-  }, 13000)
+  }, 11000);
 
   setTimeout(function () {
     crawlWrapper.classList.add('in');
-  }, 18000)
+  }, 18000);
 })();
