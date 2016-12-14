@@ -90,6 +90,7 @@
 .crawl .nyh_article__footer,
 .crawl .nyh_slideshow__captions,
 .crawl .nyh_video,
+.crawl .nyh_figure,
 .crawl > div > div > div,
 .crawl section {
   display: none;
