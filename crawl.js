@@ -45,11 +45,7 @@
   timeAgoWrapper.appendChild(timeAgo);
   wrapper.appendChild(timeAgoWrapper);
 
-  // var xhr = new XMLHttpRequest();
-  // xhr.open("GET","https://www.svtstatic.se/resources/svtservice-n-render/svt_nyheter_2.svg",false);
-  // xhr.send("");
-  // mainLogo = create('img', {src: 'https://star-news.surge.sh/star_news.svg', className: 'main-logo'});
-  mainLogo = create('img', {src: 'http://localhost:8080/star_news.svg', className: 'main-logo'});
+  mainLogo = create('img', {src: 'https://star-news.surge.sh/star_news.svg', className: 'main-logo'});
   
   var mainLogoWrapper = create('section', { className: 'main-logo-wrapper'});
   mainLogoWrapper.appendChild(mainLogo);
