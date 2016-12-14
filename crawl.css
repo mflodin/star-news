@@ -88,6 +88,8 @@
 
 .crawl .nyh_share,
 .crawl .nyh_article__footer,
+.crawl .nyh_slideshow__captions,
+.crawl .nyh_video,
 .crawl > div > div > div,
 .crawl section {
   display: none;
@@ -157,4 +159,3 @@
     transform: perspective(100px) translateZ(-2000px);
   }
 }
-
