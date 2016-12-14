@@ -78,8 +78,7 @@
 
   setTimeout(function () {
     timeAgoWrapper.classList.add('in');
-    audio.play();
-  }, 4000);
+  }, 3000);
 
   setTimeout(function () {
     timeAgoWrapper.classList.add('out');

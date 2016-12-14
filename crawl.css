@@ -20,13 +20,12 @@
 
 .time-ago-wrapper.in {
   display: block;
-  animation: fadeIn 3s forwards;
-  animation-delay: 2s;
+  animation: fadeIn 1.5s forwards;
   opacity: 0;
 }
 
 .time-ago-wrapper.out {
-  animation: fadeOut 1s forwards;
+  animation: fadeOut 1.5s forwards;
   opacity: 1;
 }
 
